@@ -72,7 +72,9 @@ function ScrollAndObserverHandler({ loading }: { loading: boolean }) {
           const delay = Math.min(siblingIndex * 0.08, 0.4); // max stagger delay of 0.4s
           (el as HTMLElement).style.transitionDelay = `${delay}s`;
         }
+      }
 
+      if (!el.classList.contains('revealed')) {
         observer.observe(el);
       }
     });

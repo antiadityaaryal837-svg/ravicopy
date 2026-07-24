@@ -242,6 +242,7 @@ export default function Features() {
                   <motion.circle
                     r="4.5"
                     fill="#d4ff00"
+                    initial={{ cx: 0, cy: 45 }}
                     animate={{
                       cx: [0, 25, 55, 80, 100],
                       cy: [45, 38, 22, 13, 5],
@@ -253,6 +254,7 @@ export default function Features() {
                   <motion.circle
                     r="10"
                     fill="rgba(212,255,0,0.3)"
+                    initial={{ cx: 0, cy: 45 }}
                     animate={{
                       cx: [0, 25, 55, 80, 100],
                       cy: [45, 38, 22, 13, 5],
