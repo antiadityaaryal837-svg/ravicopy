@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { AnimatePresence } from 'framer-motion';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom';
 import useLenis from './hooks/useLenis';
 import AnimatedLoader from './components/layout/AnimatedLoader';
 import Navbar from './components/layout/Navbar';
@@ -16,11 +17,17 @@ import Process from './sections/Process';
 import Pricing from './sections/Pricing';
 import FAQ from './sections/FAQ';
 
-function App() {
-  const [loading, setLoading] = useState(true);
+// Import Blog Pages
+import BlogList from './pages/BlogList';
+import BlogPostDetail from './pages/BlogPostDetail';
 
-  // Initialize smooth scrolling
-  useLenis();
+// A small helper component to handle Lenis scroll update and intersection observer on route transitions
+function ScrollAndObserverHandler({ loading }: { loading: boolean }) {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
 
   // Scroll reveal animation observer
   useEffect(() => {
@@ -73,35 +80,59 @@ function App() {
     return () => {
       observer.disconnect();
     };
-  }, [loading]);
+  }, [loading, pathname]);
 
+  return null;
+}
 
+function MainLayout({ loading }: { loading: boolean }) {
   return (
     <>
+      <Navbar />
+      <main>
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <Hero />
+                <Thumbnails />
+                <Clients />
+                <About />
+                <Testimonials />
+                <Stats />
+                <Features />
+                <Reviews />
+                <Process />
+                <Pricing />
+                <FAQ />
+              </>
+            }
+          />
+          <Route path="/blog" element={<BlogList />} />
+          <Route path="/blog/:id" element={<BlogPostDetail />} />
+        </Routes>
+      </main>
+      <Footer />
+      <ScrollAndObserverHandler loading={loading} />
+    </>
+  );
+}
+
+function App() {
+  const [loading, setLoading] = useState(true);
+
+  // Initialize smooth scrolling
+  useLenis();
+
+  return (
+    <Router>
       <AnimatePresence mode="wait">
         {loading && <AnimatedLoader onComplete={() => setLoading(false)} />}
       </AnimatePresence>
 
-      {!loading && (
-        <>
-          <Navbar />
-          <main>
-            <Hero />
-            <Thumbnails />
-            <Clients />
-            <About />
-            <Testimonials />
-            <Stats />
-            <Features />
-            <Reviews />
-            <Process />
-            <Pricing />
-            <FAQ />
-          </main>
-          <Footer />
-        </>
-      )}
-    </>
+      {!loading && <MainLayout loading={loading} />}
+    </Router>
   );
 }
 
