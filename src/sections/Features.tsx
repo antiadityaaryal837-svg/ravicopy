@@ -351,7 +351,7 @@ export default function Features() {
               {/* Avatar 3 - Accent Border with Name Tag */}
               <motion.div whileHover={{ y: -4 }} className="relative z-30 flex-shrink-0 cursor-pointer">
                 <div className="w-14 h-14 md:w-16 md:h-16 rounded-full border-4 border-accent bg-[#141414] overflow-hidden shadow-xl">
-                  <img src="/myicon.png" alt="Aditya" className="w-full h-full object-cover" />
+                  <img src="/myicon.webp" alt="Aditya" className="w-full h-full object-cover" width={64} height={64} loading="lazy" decoding="async" />
                 </div>
                 {/* Floating Name Tag */}
                 <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-accent text-black font-extrabold text-[11px] px-3 py-0.5 rounded-full shadow-lg border border-black/20 whitespace-nowrap">

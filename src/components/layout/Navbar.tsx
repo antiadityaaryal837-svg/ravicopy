@@ -51,9 +51,13 @@ export default function Navbar() {
           >
             <div className="w-9 h-9 md:w-12 md:h-12 rounded-full bg-accent overflow-hidden">
               <img
-                src="/myicon.png"
+                src="/myicon.webp"
                 alt="Logo"
                 className="w-full h-full object-cover"
+                width={48}
+                height={48}
+                loading="eager"
+                decoding="async"
               />
             </div>
           </a>

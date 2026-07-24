@@ -2,17 +2,34 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aditya Aryal | Creative Developer</title>
-    
+    <title>Aditya Aryal | YouTube Thumbnail Designer</title>
+
     <!-- Open Graph / SEO -->
-    <meta name="description" content="Portfolio of Aditya Aryal, Creative Developer & Designer." />
-    
-    <!-- Google Fonts -->
+    <meta name="description" content="Portfolio of Aditya Aryal, professional YouTube thumbnail designer with 13+ years experience. Top Rated Seller with 14,264+ reviews." />
+
+    <!-- Preconnect to font origins -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!--
+      Load Google Fonts non-render-blocking:
+      media="print" trick → onload switches it to "all" after CSS downloads.
+      The <noscript> fallback covers no-JS environments.
+    -->
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap"
+      media="print"
+      onload="this.media='all'"
+    >
+    <noscript>
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700&display=swap">
+    </noscript>
+
+    <!-- Preload the LCP image (profile icon shown above the fold in Hero) -->
+    <link rel="preload" as="image" href="/myicon.webp" fetchpriority="high" />
   </head>
   <body class="bg-primary antialiased">
     <div id="root"></div>

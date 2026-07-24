@@ -1,21 +1,21 @@
 const row1 = [
-  { name: 'Jeremy Hutchins', subs: '10M subscribers', img: '/creators/Jeremy Hutchins.jpg' },
-  { name: 'Corey Tonge', subs: '13.5M subscribers', img: '/creators/Corey Tonge.png' },
-  { name: 'ANATOLY', subs: '9.35M subscribers', img: '/creators/Anatoly.jpg' },
-  { name: 'Jancy Family', subs: '2.5M subscribers', img: '/creators/Jancy Family.jpg' },
-  { name: 'Larry Wheels', subs: '3.38M subscribers', img: '/creators/Larry Wheels.jpg' },
-  { name: 'Trevor Noah', subs: '4.1M subscribers', img: '/creators/Trevor Noah.jpg' },
-  { name: 'Jonathan Joly', subs: '2.2M subscribers', img: '/creators/Jonathan Joly.jpg' },
+  { name: 'Jeremy Hutchins', subs: '10M subscribers', img: '/creators/Jeremy Hutchins.webp' },
+  { name: 'Corey Tonge', subs: '13.5M subscribers', img: '/creators/Corey Tonge.webp' },
+  { name: 'ANATOLY', subs: '9.35M subscribers', img: '/creators/Anatoly.webp' },
+  { name: 'Jancy Family', subs: '2.5M subscribers', img: '/creators/Jancy Family.webp' },
+  { name: 'Larry Wheels', subs: '3.38M subscribers', img: '/creators/Larry Wheels.webp' },
+  { name: 'Trevor Noah', subs: '4.1M subscribers', img: '/creators/Trevor Noah.webp' },
+  { name: 'Jonathan Joly', subs: '2.2M subscribers', img: '/creators/Jonathan Joly.webp' },
 ];
 
 const row2 = [
-  { name: 'Richie Le', subs: '1.2M subscribers', img: '/creators/Richie Le.jpg' },
-  { name: 'Duke Dennis', subs: '4.6M subscribers', img: '/creators/Duke Dennis.jpg' },
-  { name: 'Preston Playz', subs: '15.2M subscribers', img: '/creators/Preston Playz.jpg' },
-  { name: 'THE DLA FAM', subs: '6.8M subscribers', img: '/creators/THE DLA FAM.jpg' },
-  { name: 'La Familia Latorre', subs: '4.5M subscribers', img: '/creators/La Familia Latorre.jpg' },
-  { name: 'Dani e Robi', subs: '2.1M subscribers', img: '/creators/Dani e Robi.jpg' },
-  { name: '4PLUSONE.', subs: '1.5M subscribers', img: '/creators/4PLUSONE..jpg' },
+  { name: 'Richie Le', subs: '1.2M subscribers', img: '/creators/Richie Le.webp' },
+  { name: 'Duke Dennis', subs: '4.6M subscribers', img: '/creators/Duke Dennis.webp' },
+  { name: 'Preston Playz', subs: '15.2M subscribers', img: '/creators/Preston Playz.webp' },
+  { name: 'THE DLA FAM', subs: '6.8M subscribers', img: '/creators/THE DLA FAM.webp' },
+  { name: 'La Familia Latorre', subs: '4.5M subscribers', img: '/creators/La Familia Latorre.webp' },
+  { name: 'Dani e Robi', subs: '2.1M subscribers', img: '/creators/Dani e Robi.webp' },
+  { name: '4PLUSONE.', subs: '1.5M subscribers', img: '/creators/4PLUSONE..webp' },
 ];
 
 const ClientCard = ({ client }: { client: typeof row1[0] }) => {
@@ -26,6 +26,10 @@ const ClientCard = ({ client }: { client: typeof row1[0] }) => {
           src={client.img}
           alt={client.name}
           className="w-full h-full object-cover"
+          width={192}
+          height={192}
+          loading="lazy"
+          decoding="async"
         />
       </div>
       <div>

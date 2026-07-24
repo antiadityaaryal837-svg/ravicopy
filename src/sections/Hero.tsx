@@ -22,9 +22,14 @@ export default function Hero() {
           {/* Profile Image */}
           <div className="w-12 h-12 sm:w-18 sm:h-18 md:w-28 md:h-28 rounded-full bg-accent overflow-hidden flex-shrink-0 border-2 border-accent/40 shadow-lg">
             <img
-              src="/myicon.png"
+              src="/myicon.webp"
               alt="Profile"
               className="w-full h-full object-cover"
+              width={200}
+              height={200}
+              fetchPriority="high"
+              loading="eager"
+              decoding="async"
             />
           </div>
 

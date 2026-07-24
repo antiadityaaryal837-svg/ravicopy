@@ -5,7 +5,7 @@ export default function Footer() {
 
         {/* Left: Avatar */}
         <div className="w-9 h-9 md:w-10 md:h-10 rounded-full bg-accent overflow-hidden border border-accent/20 flex-shrink-0">
-          <img src="/myicon.png" alt="Aditya" className="w-full h-full object-cover" />
+          <img src="/myicon.webp" alt="Aditya" className="w-full h-full object-cover" width={40} height={40} loading="lazy" decoding="async" />
         </div>
 
         {/* Center: Text */}
