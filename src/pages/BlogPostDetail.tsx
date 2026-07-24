@@ -3,6 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { motion, useScroll, useSpring } from 'framer-motion';
 import { blogPosts } from '../data/blogPosts';
 import { ArrowLeft, Clock, Calendar, Heart, Share2, MessageSquare, ChevronRight, BookOpen, User, Check, Send } from 'lucide-react';
+import useSEO from '../hooks/useSEO';
 
 interface TocItem {
   id: string;
@@ -22,6 +23,68 @@ export default function BlogPostDetail() {
   const post = useMemo(() => {
     return blogPosts.find((p) => p.id === id) || null;
   }, [id]);
+
+  // Set dynamic metadata and schemas for the blog post
+  useSEO({
+    title: post ? `${post.title} — Aditya Aryal` : 'Aditya Aryal | Blog',
+    description: post ? post.excerpt : 'Blog post by Aditya Aryal.',
+    canonicalUrl: post ? `https://adityaaryal.com.np/blog/${post.id}` : undefined,
+    ogImage: post ? post.coverImage : undefined,
+    ogType: 'article',
+    articleMeta: post ? {
+      publishedTime: post.publishedAt,
+      author: post.author.name,
+      tags: post.tags,
+    } : undefined,
+    jsonLd: post ? [
+      {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "mainEntityOfPage": {
+          "@type": "WebPage",
+          "@id": `https://adityaaryal.com.np/blog/${post.id}`
+        },
+        "headline": post.title,
+        "description": post.excerpt,
+        "image": post.coverImage,
+        "datePublished": post.publishedAt,
+        "author": {
+          "@type": "Person",
+          "name": post.author.name,
+          "image": post.author.avatar
+        },
+        "publisher": {
+          "@type": "Person",
+          "name": "Aditya Aryal",
+          "image": "https://adityaaryal.com.np/myicon.webp"
+        }
+      },
+      {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://adityaaryal.com.np"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://adityaaryal.com.np/blog"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": post.title,
+            "item": `https://adityaaryal.com.np/blog/${post.id}`
+          }
+        ]
+      }
+    ] : undefined,
+  });
 
   // Framer Motion page scroll progress
   const { scrollYProgress } = useScroll();

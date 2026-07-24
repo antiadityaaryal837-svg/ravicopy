@@ -1,0 +1,24 @@
+{
+  "short_name": "Aditya Aryal",
+  "name": "Aditya Aryal | Professional YouTube Thumbnail Designer",
+  "description": "Boost your CTR with customized YouTube thumbnail designs. Portfolio of Aditya Aryal.",
+  "start_url": "/",
+  "background_color": "#0a0a0a",
+  "theme_color": "#d4ff00",
+  "display": "standalone",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/myicon.webp",
+      "sizes": "200x200",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ]
+}

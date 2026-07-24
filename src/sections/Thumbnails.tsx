@@ -88,7 +88,7 @@ const SliderRow = ({ images, reverse = false, speed = "60s" }: { images: string[
           <div key={idx} className="w-[300px] md:w-[400px] aspect-video flex-shrink-0 bg-[#111] rounded-none overflow-hidden relative group/item cursor-pointer border border-white/5">
             <img 
               src={src} 
-              alt={`Thumbnail ${idx}`} 
+              alt={`YouTube thumbnail design portfolio work by Aditya Aryal - Example #${idx + 1}`} 
               className="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-105"
               width={800}
               height={450}
@@ -108,7 +108,7 @@ const SliderRow = ({ images, reverse = false, speed = "60s" }: { images: string[
           <div key={`dup-${idx}`} className="w-[300px] md:w-[400px] aspect-video flex-shrink-0 bg-[#111] rounded-none overflow-hidden relative group/item cursor-pointer border border-white/5">
             <img 
               src={src} 
-              alt={`Thumbnail dup ${idx}`} 
+              alt={`YouTube thumbnail design portfolio work by Aditya Aryal - Duplicated Example #${idx + 1}`} 
               className="w-full h-full object-cover transition-transform duration-500 group-hover/item:scale-105"
               width={800}
               height={450}

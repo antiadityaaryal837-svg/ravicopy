@@ -41,7 +41,7 @@ export default function Hero() {
 
             {/* Name & Handle */}
             <div className="flex items-center gap-1.5 sm:gap-3 mb-0.5">
-              <h3 className="text-white font-bold text-[15px] sm:text-[20px] md:text-[30px] tracking-tight">Aditya</h3>
+              <span className="text-white font-bold text-[15px] sm:text-[20px] md:text-[30px] tracking-tight">Aditya</span>
               <span className="text-white/60 text-[11px] sm:text-[15px] md:text-[20px] font-normal">@aditya.motions</span>
             </div>
 
@@ -63,7 +63,7 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1, y: 0 }}
           transition={{ duration: 1.0, delay: 0.4, ease: [0.16, 1, 0.3, 1] }}
         >
-          Viewers judge the video<br />by it's Thumbnail.
+          Viewers judge the video<br />by its Thumbnail.
         </motion.h1>
 
         {/* Paragraph */}

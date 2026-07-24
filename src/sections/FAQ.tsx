@@ -3,14 +3,40 @@ import { useState } from 'react';
 const faqs = [
   {
     q: "What information do you need from me to create a thumbnail?",
-    a: "I usually need a rough idea of the video and, if possible, the intro. Typically, I'll ask for details like the working title, a basic concept, your preferred style or a reference image, and any specific assets you'd like included in the design."
+    a: "To create a high-CTR YouTube thumbnail, I need a summary of your video's core concept, the working title, and the intro (if available). Additionally, providing style references or target visual examples, asset files like high-res raw images of your face or graphics, and logo assets helps align the design with your channel branding."
   },
-  { q: "What is the turnaround time for thumbnail?", a: "Turnaround time is typically 24-48 hours depending on complexity." },
-  { q: "What's your step-by-step process when we work together?", a: "We start with a brief, move to a sketch/concept, and then finalize the design." },
-  { q: "How is A/B Testing handled?", a: "We provide multiple variations that you can test on YouTube to see which performs best." },
-  { q: "Do you offer revisions?", a: "Yes, we offer up to 2 revisions on all plans." },
-  { q: "Do you use AI in your process?", a: "We use AI for enhancements and inspiration, but all core designs are hand-crafted." },
-  { q: "What if I don't like the thumbnail design?", a: "We will work with you to understand what went wrong and revise it until you're satisfied." }
+  { 
+    q: "What is the turnaround time for thumbnail?", 
+    a: "My standard turnaround time for a single professional-grade YouTube thumbnail is 24 to 48 hours. This timeframe ensures careful strategic design, visual hierarchy planning, image retouching, and detail rendering. If you are on an enterprise package or need bulk delivery, we can align on custom schedules." 
+  },
+  { 
+    q: "What's your step-by-step process when we work together?", 
+    a: "Our workflow begins with a creative brief where you share video ideas. Then, I design a custom draft/concept focusing on layout composition and color psychology. After you review the initial draft, I incorporate your feedback for revisions and deliver the final high-resolution click-ready file." 
+  },
+  { 
+    q: "How is A/B Testing handled?", 
+    a: "We provide visual variations (such as alternate text styles, color contrasts, or image placement adjustments) that you can upload to YouTube's thumbnail test-and-compare tool. This lets you empirically test which visual variant achieves a higher click-through rate (CTR) with your specific target audience." 
+  },
+  { 
+    q: "Do you offer revisions?", 
+    a: "Yes, I offer up to two rounds of revisions on standard pricing plans. Revisions cover adjusting text layout, tweaking color options, modifying filters, and changing lighting/contrasts. This ensures the final thumbnail aligns perfectly with your expectations and creative vision." 
+  },
+  { 
+    q: "Do you use AI in your process?", 
+    a: "I selectively utilize artificial intelligence models for asset enhancements, complex background generation, and creative inspiration. However, all core thumbnail components, visual storytelling, text layouts, character retouching, and final composition are hand-crafted manually using professional design software." 
+  },
+  { 
+    q: "What if I don't like the thumbnail design?", 
+    a: "If the initial concept does not meet your expectations, we will review the creative brief to pinpoint what needs adjustment. We will adjust the composition, color grading, or typography in subsequent revisions to ensure we achieve a high-performing thumbnail that you love." 
+  },
+  {
+    q: "How much does a YouTube thumbnail cost?",
+    a: "Our professional YouTube thumbnail designs range from $75 for our Basic package to $145 for our Standard/Professional package. Custom pricing is available for enterprise channels and creators needing dedicated strategy. Every thumbnail is built from scratch with custom compositions."
+  },
+  {
+    q: "What makes a thumbnail get more clicks?",
+    a: "A high-CTR thumbnail relies on clear emotional triggers, high color contrast, a solid focal point, and readable text. Using complementary colors and clean layout compositions prevents visual clutter. Testing thumbnails on mobile-size viewports also guarantees the graphic is easy to read."
+  }
 ];
 
 export default function FAQ() {
@@ -44,6 +70,7 @@ export default function FAQ() {
               <div key={i} className={`border-b border-[#222] transition-colors ${isOpen ? 'bg-[#141414] rounded-2xl border-transparent' : ''}`}>
                 <button
                   onClick={() => setOpenIdx(isOpen ? null : i)}
+                  aria-expanded={isOpen}
                   className="w-full py-5 md:py-6 px-4 md:px-6 flex items-center justify-between text-left"
                 >
                   <span className={`text-[14px] md:text-[16px] font-medium ${isOpen ? 'text-white' : 'text-[#888888] hover:text-white transition-colors'}`}>
@@ -58,7 +85,7 @@ export default function FAQ() {
                   </span>
                 </button>
                 {isOpen && (
-                  <div className="px-4 md:px-6 pb-5 md:pb-6 text-[#888888] text-[13px] md:text-[15px] leading-relaxed">
+                   <div className="px-4 md:px-6 pb-5 md:pb-6 text-[#888888] text-[13px] md:text-[15px] leading-relaxed">
                     {faq.a}
                   </div>
                 )}

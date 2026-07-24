@@ -50,7 +50,7 @@ export default function About() {
             <div className="aspect-[3/4] rounded-2xl overflow-hidden bg-[#111] border border-white/10 shadow-2xl">
               <img
                 src="/Personal_photos/492889639_122168053634334667_5335861109855230166_n.jpg"
-                alt="Aditya Aryal"
+                alt="Aditya Aryal — Professional YouTube Thumbnail Designer and CTR Strategist"
                 className="w-full h-full object-cover"
               />
             </div>

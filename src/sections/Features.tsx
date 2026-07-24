@@ -306,13 +306,13 @@ export default function Features() {
               {/* Row 1 */}
               <div className="flex items-center gap-3">
                 <motion.div whileHover={{ scale: 1.15, rotate: 5 }} className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1c1c1c] border border-[#2e2e2e] p-2.5 flex items-center justify-center overflow-hidden shadow-lg transition-transform cursor-pointer">
-                  <img src="/iconsin bleow/a4S6hafDTv5oxWgZaR4RzykZz0c5f81.png" alt="App Icon 1" className="w-full h-full object-contain" />
+                  <img src="/iconsin bleow/a4S6hafDTv5oxWgZaR4RzykZz0c5f81.png" alt="Collaboration App Icon" className="w-full h-full object-contain" />
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.15, rotate: -5 }} className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1c1c1c] border border-[#2e2e2e] p-2.5 flex items-center justify-center overflow-hidden shadow-lg transition-transform cursor-pointer">
                   <img src="/iconsin bleow/ck5HKQjtep5seir3Q6JyeVt5HoA7654.png" alt="Telegram Icon" className="w-full h-full object-contain" />
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.15, rotate: 5 }} className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1c1c1c] border border-[#2e2e2e] p-2.5 flex items-center justify-center overflow-hidden shadow-lg transition-transform cursor-pointer">
-                  <img src="/iconsin bleow/claude-logo.svg" alt="Slack Icon" className="w-full h-full object-contain" />
+                  <img src="/iconsin bleow/claude-logo.svg" alt="Claude AI Logo" className="w-full h-full object-contain" />
                 </motion.div>
               </div>
 

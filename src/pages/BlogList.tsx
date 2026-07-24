@@ -3,8 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { blogPosts, blogCategories } from '../data/blogPosts';
 import { Search, Clock, ArrowRight, Tag, BookOpen, Sparkles } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import useSEO from '../hooks/useSEO';
 
 export default function BlogList() {
+  useSEO({
+    title: 'YouTube Thumbnail Design Insights & CTR Strategies — Aditya Aryal',
+    description: 'Learn the visual psychology, design systems, and YouTube algorithm strategies behind high-converting thumbnails. Insights by Aditya Aryal.',
+    canonicalUrl: 'https://adityaaryal.com.np/blog',
+  });
+
   const [searchQuery, setSearchQuery] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('All');
 
