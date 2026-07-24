@@ -244,22 +244,23 @@ export default function Features() {
                     fill="#d4ff00"
                     initial={{ cx: 0, cy: 45 }}
                     animate={{
-                      x: [0, 25, 55, 80, 100],
-                      y: [45, 38, 22, 13, 5],
+                      cx: [0, 25, 55, 80, 100],
+                      cy: [45, 38, 22, 13, 5],
                     }}
                     transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' as const, times: [0, 0.25, 0.55, 0.8, 1] }}
-                  >
-                    {/* Animated dot that travels along the path */}
-                    <circle
-                      r="4.5"
-                      fill="#d4ff00"
-                    />
-                    {/* Pulsing glow behind traveling dot */}
-                    <circle
-                      r="10"
-                      fill="rgba(212,255,0,0.3)"
-                    />
-                  </motion.g>
+                  />
+
+                  {/* Pulsing glow behind traveling dot */}
+                  <motion.circle
+                    r="10"
+                    fill="rgba(212,255,0,0.3)"
+                    initial={{ cx: 0, cy: 45 }}
+                    animate={{
+                      cx: [0, 25, 55, 80, 100],
+                      cy: [45, 38, 22, 13, 5],
+                    }}
+                    transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' as const, times: [0, 0.25, 0.55, 0.8, 1] }}
+                  />
                 </svg>
 
                 {/* Floating Metric bubble that follows the curve */}
