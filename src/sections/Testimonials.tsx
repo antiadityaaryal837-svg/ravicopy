@@ -1,6 +1,6 @@
 const testimonials = [
   { logo: '/companies review/EH3pdw91i6cmCfHikRjPm6EqpmU3989.png', alt: 'Company 1', quote: '"Creative, innovative, and strategic-our collaboration has led to great results, and I look forward to many more successful projects."' },
-  { logo: '/companies review/QAvg9udbrG0kr48M0V3tvuasRc11f4.png', alt: 'Company 2', quote: '"Ravi did visually compelling designs that aligned seamlessly with the branding & objectives of the Visa Direct Podcast."' },
+  { logo: '/companies review/QAvg9udbrG0kr48M0V3tvuasRc11f4.png', alt: 'Company 2', quote: '"Aditya did visually compelling designs that aligned seamlessly with the branding & objectives of the Visa Direct Podcast."' },
   { logo: '/companies review/TUfLfNJTAzQaqrvXKbRC4m3Z0U3b86.png', alt: 'Company 3', quote: '"An exceptional designer and skilled professional, dedicated to crafting adaptable and creative concepts"' },
   { logo: '/companies review/lcjjVPCq813t2amhNsyeN2yK0ek0c8f.png', alt: 'Company 4', quote: '"This designer brings a groundbreaking approach to gameplay that distinctly sets them apart within the broader industry"' },
 ];
@@ -13,10 +13,10 @@ export default function Testimonials() {
           {testimonials.map((t, i) => (
             <div key={i} className="flex flex-col items-center text-center">
               <div className="h-14 sm:h-16 md:h-20 flex items-center justify-center mb-6 md:mb-8 px-2">
-                <img 
-                  src={t.logo} 
-                  alt={t.alt} 
-                  className="max-h-full max-w-[180px] sm:max-w-[220px] object-contain hover:scale-105 transition-transform duration-300" 
+                <img
+                  src={t.logo}
+                  alt={t.alt}
+                  className="max-h-full max-w-[180px] sm:max-w-[220px] object-contain hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <p className="text-[#999999] text-[14px] sm:text-[15px] md:text-[17px] leading-relaxed mb-6 md:mb-8 flex-grow">

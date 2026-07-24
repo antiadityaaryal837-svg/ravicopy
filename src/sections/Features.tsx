@@ -33,7 +33,7 @@ export default function Features() {
             {/* Growth Chart Graphic */}
             <div className="w-full flex-grow flex flex-col justify-between p-5 bg-[#0c0c0c] rounded-2xl border border-[#222] relative overflow-hidden">
               <div className="text-accent text-sm font-extrabold tracking-wide">Growth</div>
-              
+
               {/* Animated Bars */}
               <div className="flex items-end justify-between gap-1.5 h-28 mt-4 mb-2 px-1">
                 {[
@@ -124,7 +124,7 @@ export default function Features() {
           {/* Card 3: Scalable as you grow */}
           <div className="bg-[#141414] border border-[#222] rounded-[32px] p-8 min-h-[380px] flex flex-col justify-between relative overflow-hidden group hover:border-[#333] transition-all duration-300">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,255,0,0.06)_0%,transparent_70%)] pointer-events-none group-hover:scale-110 transition-transform duration-700" />
-            
+
             {/* Trend Chart Graphic */}
             <div className="w-full flex-grow flex flex-col justify-between p-6 bg-[#0c0c0c] rounded-2xl border border-[#222] relative overflow-hidden">
               {/* Dashed blueprint grid background */}
@@ -152,7 +152,7 @@ export default function Features() {
                   <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
                   <span className="text-[10px] tracking-wider text-accent font-extrabold uppercase">Uncapped growth</span>
                 </motion.div>
-                
+
                 <motion.div
                   className="bg-[#111] border border-[#222] rounded-md px-2 py-0.5 text-[9px] text-[#666] font-mono"
                   animate={{ opacity: [0.5, 0.9, 0.5] }}
@@ -248,7 +248,7 @@ export default function Features() {
                     }}
                     transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' as const, times: [0, 0.25, 0.55, 0.8, 1] }}
                   />
-                  
+
                   {/* Pulsing glow behind traveling dot */}
                   <motion.circle
                     r="10"
@@ -310,17 +310,17 @@ export default function Features() {
                   <img src="/iconsin bleow/ck5HKQjtep5seir3Q6JyeVt5HoA7654.png" alt="Telegram Icon" className="w-full h-full object-contain" />
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.15, rotate: 5 }} className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1c1c1c] border border-[#2e2e2e] p-2.5 flex items-center justify-center overflow-hidden shadow-lg transition-transform cursor-pointer">
-                  <img src="/iconsin bleow/claude icon].jpg" alt="Slack Icon" className="w-full h-full object-contain" />
+                  <img src="/iconsin bleow/claude-logo.svg" alt="Slack Icon" className="w-full h-full object-contain" />
                 </motion.div>
               </div>
 
               {/* Row 2 - Staggered */}
               <div className="flex items-center gap-3 pr-4">
                 <motion.div whileHover={{ scale: 1.15, rotate: -5 }} className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1c1c1c] border border-[#2e2e2e] p-2.5 flex items-center justify-center overflow-hidden shadow-lg transition-transform cursor-pointer">
-                  <img src="/iconsin bleow/x icon.avif" alt="X Icon" className="w-full h-full object-contain" />
+                  <img src="/iconsin bleow/X_icon.svg.webp" alt="X Icon" className="w-full h-full object-contain" />
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.15, rotate: 5 }} className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1c1c1c] border border-[#2e2e2e] p-2.5 flex items-center justify-center overflow-hidden shadow-lg transition-transform cursor-pointer">
-                  <img src="/iconsin bleow/photoshopicon.png" alt="Photoshop Icon" className="w-full h-full object-contain" />
+                  <img src="/iconsin bleow/Adobe-Photoshop-Logo.png" alt="Photoshop Icon" className="w-full h-full object-contain" />
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.15, rotate: -5 }} className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1c1c1c] border border-[#2e2e2e] p-2.5 flex items-center justify-center overflow-hidden shadow-lg transition-transform cursor-pointer">
                   <img src="/iconsin bleow/discord icon.webp" alt="Discord Icon" className="w-full h-full object-contain" />
@@ -342,7 +342,7 @@ export default function Features() {
               <motion.div whileHover={{ y: -4 }} className="w-14 h-14 md:w-16 md:h-16 rounded-full border-4 border-[#a855f7] bg-[#141414] overflow-hidden z-10 shadow-xl flex-shrink-0 cursor-pointer">
                 <img src="/ioncs for thisone/iconsfrocollaborate (1).png" alt="Collaborator 1" className="w-full h-full object-cover" />
               </motion.div>
-              
+
               {/* Avatar 2 - Cyan Border */}
               <motion.div whileHover={{ y: -4 }} className="w-14 h-14 md:w-16 md:h-16 rounded-full border-4 border-[#06b6d4] bg-[#141414] overflow-hidden z-20 shadow-xl flex-shrink-0 cursor-pointer">
                 <img src="/ioncs for thisone/iconsfrocollaborate (2).png" alt="Collaborator 2" className="w-full h-full object-cover" />
@@ -351,11 +351,11 @@ export default function Features() {
               {/* Avatar 3 - Accent Border with Name Tag */}
               <motion.div whileHover={{ y: -4 }} className="relative z-30 flex-shrink-0 cursor-pointer">
                 <div className="w-14 h-14 md:w-16 md:h-16 rounded-full border-4 border-accent bg-[#141414] overflow-hidden shadow-xl">
-                  <img src="/ioncs for thisone/myicon.jpg" alt="Ravi" className="w-full h-full object-cover" />
+                  <img src="/myicon.png" alt="Aditya" className="w-full h-full object-cover" />
                 </div>
                 {/* Floating Name Tag */}
                 <div className="absolute -bottom-3 left-1/2 -translate-x-1/2 bg-accent text-black font-extrabold text-[11px] px-3 py-0.5 rounded-full shadow-lg border border-black/20 whitespace-nowrap">
-                  Ravi
+                  Aditya
                 </div>
               </motion.div>
 

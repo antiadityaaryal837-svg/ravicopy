@@ -1,22 +1,21 @@
 const row1 = [
-  { name: 'Jeremy Hutchins', subs: '10M subscribers', img: '/creators/867xsmpIUBf89rsf8F1bmsXaulg4b8f.jpg' },
-  { name: 'Corey Tonge', subs: '13.5M subscribers', img: '/creators/G1951Hvbqcpaao921PW14UTF1Y4b8f.jpg' },
-  { name: 'Nitish Rajput', subs: '8M subscribers', img: '/creators/J6IU1FhAtfAF9YS0L5nk7wEnoQE4b8f.png' },
-  { name: 'ANATOLY', subs: '9.35M subscribers', img: '/creators/LYEwtdeQ8Y3g4oRJssPLM0zXqWg4b8f.jpg' },
-  { name: 'Visit Dubai', subs: '600K subscribers', img: '/creators/Mn1BISKznzMuIG3yttXZAN4edvM4b8f.jpg' },
-  { name: 'Kara and Nate', subs: '4.2M subscribers', img: '/creators/NEWlT41tCJ31iRQhH3p1IgPfOj812f3.jpg' },
-  { name: 'Sean Rakidzich', subs: '301K subscribers', img: '/creators/Oyj9FOPvIqhVNlKZa5ueZrMNqQ4b8f.jpg' },
-  { name: 'Larry Wheels', subs: '3.38M subscribers', img: '/creators/SDWpB0oH2gqlfwHhHWa7J4kGBc04b8f.jpg' },
+  { name: 'Jeremy Hutchins', subs: '10M subscribers', img: '/creators/Jeremy Hutchins.jpg' },
+  { name: 'Corey Tonge', subs: '13.5M subscribers', img: '/creators/Corey Tonge.png' },
+  { name: 'ANATOLY', subs: '9.35M subscribers', img: '/creators/Anatoly.jpg' },
+  { name: 'Jancy Family', subs: '2.5M subscribers', img: '/creators/Jancy Family.jpg' },
+  { name: 'Larry Wheels', subs: '3.38M subscribers', img: '/creators/Larry Wheels.jpg' },
+  { name: 'Trevor Noah', subs: '4.1M subscribers', img: '/creators/Trevor Noah.jpg' },
+  { name: 'Jonathan Joly', subs: '2.2M subscribers', img: '/creators/Jonathan Joly.jpg' },
 ];
 
 const row2 = [
-  { name: 'Dhruv Rathee', subs: '31M subscribers', img: '/creators/SwsC3EcGenqYIFuUl2qB73O9w8954b.jpg' },
-  { name: 'CJ SO COOL', subs: '9.17M subscribers', img: '/creators/W0lYfiqXhHcqFHNS4aseJVnXco4b8f.jpg' },
-  { name: 'MrBeast', subs: '250M subscribers', img: '/creators/ZgdTo2ElKBzf1cAauLFUoR7qQ4b8f.jpg' },
-  { name: 'MKBHD', subs: '18M subscribers', img: '/creators/esORxPZYyYWcM1zZu2it1JClCNE4b8f.jpg' },
-  { name: 'Casey Neistat', subs: '12.5M subscribers', img: '/creators/stzbhJ2gC3mktcV15T3kAsgcZ84b8f.jpg' },
-  { name: 'Logan Paul', subs: '23M subscribers', img: '/creators/w6IhWrChO6CNcGPxsvpDTZWuw4b8f.jpg' },
-  { name: 'PewDiePie', subs: '111M subscribers', img: '/creators/zM4lkzS1yeBQgnU9CrhNEoXayc4b8f.jpg' },
+  { name: 'Richie Le', subs: '1.2M subscribers', img: '/creators/Richie Le.jpg' },
+  { name: 'Duke Dennis', subs: '4.6M subscribers', img: '/creators/Duke Dennis.jpg' },
+  { name: 'Preston Playz', subs: '15.2M subscribers', img: '/creators/Preston Playz.jpg' },
+  { name: 'THE DLA FAM', subs: '6.8M subscribers', img: '/creators/THE DLA FAM.jpg' },
+  { name: 'La Familia Latorre', subs: '4.5M subscribers', img: '/creators/La Familia Latorre.jpg' },
+  { name: 'Dani e Robi', subs: '2.1M subscribers', img: '/creators/Dani e Robi.jpg' },
+  { name: '4PLUSONE.', subs: '1.5M subscribers', img: '/creators/4PLUSONE..jpg' },
 ];
 
 const ClientCard = ({ client }: { client: typeof row1[0] }) => {
