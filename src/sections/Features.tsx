@@ -122,65 +122,163 @@ export default function Features() {
           </div>
 
           {/* Card 3: Scalable as you grow */}
-          <div className="bg-[#141414] border border-[#222] rounded-[32px] p-8 min-h-[380px] flex flex-col justify-between relative overflow-hidden group">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,255,0,0.08)_0%,transparent_70%)] pointer-events-none" />
+          <div className="bg-[#141414] border border-[#222] rounded-[32px] p-8 min-h-[380px] flex flex-col justify-between relative overflow-hidden group hover:border-[#333] transition-all duration-300">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,rgba(212,255,0,0.06)_0%,transparent_70%)] pointer-events-none group-hover:scale-110 transition-transform duration-700" />
             
             {/* Trend Chart Graphic */}
             <div className="w-full flex-grow flex flex-col justify-between p-6 bg-[#0c0c0c] rounded-2xl border border-[#222] relative overflow-hidden">
+              {/* Dashed blueprint grid background */}
+              <div className="absolute inset-0 flex flex-col justify-between py-6 pointer-events-none opacity-[0.06] group-hover:opacity-10 transition-opacity duration-300">
+                {[1, 2, 3].map((_, i) => (
+                  <div key={i} className="w-full border-t border-dashed border-accent" />
+                ))}
+              </div>
+              <div className="absolute inset-0 flex justify-between px-6 pointer-events-none opacity-[0.06] group-hover:opacity-10 transition-opacity duration-300">
+                {[1, 2, 3, 4].map((_, i) => (
+                  <div key={i} className="h-full border-l border-dashed border-accent" />
+                ))}
+              </div>
+
+              {/* Floating Performance Indicator */}
+              <div className="absolute top-4 right-4 flex flex-col items-end gap-1.5 z-20">
+                <motion.div
+                  className="bg-[#161616]/95 backdrop-blur-md border border-accent/20 rounded-full px-3 py-1 flex items-center gap-1.5 shadow-lg shadow-accent/5"
+                  animate={{
+                    y: [0, -3, 0],
+                    borderColor: ["rgba(212,255,0,0.2)", "rgba(212,255,0,0.5)", "rgba(212,255,0,0.2)"],
+                  }}
+                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" as const }}
+                >
+                  <span className="w-1.5 h-1.5 rounded-full bg-accent animate-pulse" />
+                  <span className="text-[10px] tracking-wider text-accent font-extrabold uppercase">Uncapped growth</span>
+                </motion.div>
+                
+                <motion.div
+                  className="bg-[#111] border border-[#222] rounded-md px-2 py-0.5 text-[9px] text-[#666] font-mono"
+                  animate={{ opacity: [0.5, 0.9, 0.5] }}
+                  transition={{ duration: 2, repeat: Infinity, ease: "easeInOut" as const }}
+                >
+                  Load: 0.02s response
+                </motion.div>
+              </div>
+
               <div className="relative w-full h-36 flex items-center justify-center">
-                {/* Dashed Grid Lines & Axis Labels */}
-                <div className="absolute inset-0 flex justify-between items-end px-2 text-[#444] text-[10px] pointer-events-none">
-                  {['45', '35', '25', '15', '5', '0', '-5'].map((num, idx) => (
-                    <div key={idx} className="flex flex-col items-center gap-1">
-                      <div className="w-px h-28 border-r border-dashed border-[#222]" />
-                      <span>{num}</span>
-                    </div>
-                  ))}
+                {/* Y-Axis Labels */}
+                <div className="absolute left-1 bottom-4 flex flex-col justify-between h-[85%] text-[#444] text-[9px] font-mono pointer-events-none">
+                  <span>100k</span>
+                  <span>50k</span>
+                  <span>10k</span>
                 </div>
 
                 {/* Animated Growth Curve SVG */}
-                <svg viewBox="0 0 100 50" className="w-full h-full fill-none overflow-visible z-10">
-                  {/* Glow under path */}
+                <svg viewBox="0 0 100 50" className="w-full h-full fill-none overflow-visible z-10 pl-6 pr-2">
+                  <defs>
+                    <linearGradient id="card3-area-gradient" x1="0" y1="0" x2="0" y2="1">
+                      <stop offset="0%" stopColor="#d4ff00" stopOpacity="0.25" />
+                      <stop offset="100%" stopColor="#d4ff00" stopOpacity="0.0" />
+                    </linearGradient>
+                    <linearGradient id="card3-line-gradient" x1="0" y1="0" x2="1" y2="0">
+                      <stop offset="0%" stopColor="#d4ff00" stopOpacity="0.3" />
+                      <stop offset="60%" stopColor="#d4ff00" stopOpacity="0.8" />
+                      <stop offset="100%" stopColor="#d4ff00" stopOpacity="1" />
+                    </linearGradient>
+                  </defs>
+
+                  {/* Gradient Area Chart */}
                   <motion.path
-                    d="M0 45 Q 25 30, 45 25 T 80 12 L 100 0"
-                    stroke="rgba(212,255,0,0.2)"
-                    strokeWidth="6"
-                    strokeLinecap="round"
-                    initial={{ pathLength: 0 }}
-                    animate={{ pathLength: [0, 1, 1, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', times: [0, 0.5, 0.7, 1] }}
+                    d="M 0 45 Q 25 35, 55 22 T 100 5 L 100 50 L 0 50 Z"
+                    fill="url(#card3-area-gradient)"
+                    initial={{ opacity: 0 }}
+                    animate={{ opacity: [0, 0.85, 0.85, 0] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' as const, times: [0, 0.6, 0.8, 1] }}
                   />
+
                   {/* Main path */}
                   <motion.path
-                    d="M0 45 Q 25 30, 45 25 T 80 12 L 100 0"
-                    stroke="#d4ff00"
+                    d="M 0 45 Q 25 35, 55 22 T 100 5"
+                    stroke="url(#card3-line-gradient)"
                     strokeWidth="2.5"
                     strokeLinecap="round"
                     initial={{ pathLength: 0 }}
                     animate={{ pathLength: [0, 1, 1, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', times: [0, 0.5, 0.7, 1] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' as const, times: [0, 0.6, 0.8, 1] }}
                   />
+
+                  {/* Staggered sequential nodes along the path */}
+                  {[
+                    { cx: 0, cy: 45, delay: 0 },
+                    { cx: 25, cy: 38, delay: 1.0 },
+                    { cx: 55, cy: 22, delay: 2.0 },
+                    { cx: 80, cy: 13, delay: 3.0 },
+                    { cx: 100, cy: 5, delay: 3.8 }
+                  ].map((node, i) => (
+                    <g key={i}>
+                      {/* Pulsing ring */}
+                      <motion.circle
+                        cx={node.cx}
+                        cy={node.cy}
+                        r="5"
+                        stroke="#d4ff00"
+                        strokeWidth="1"
+                        fill="none"
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: [0.5, 1.8, 0.8], opacity: [0, 0.7, 0] }}
+                        transition={{ duration: 2.5, repeat: Infinity, delay: node.delay, ease: "easeOut" as const }}
+                      />
+                      {/* Solid inner dot */}
+                      <motion.circle
+                        cx={node.cx}
+                        cy={node.cy}
+                        r="2.5"
+                        fill="#d4ff00"
+                        initial={{ scale: 0 }}
+                        animate={{ scale: [0, 1.1, 1.1, 0] }}
+                        transition={{ duration: 5, repeat: Infinity, times: [0, 0.15 + (i * 0.12), 0.85, 1], ease: "easeInOut" as const }}
+                      />
+                    </g>
+                  ))}
+
                   {/* Animated dot that travels along the path */}
                   <motion.circle
                     r="4.5"
                     fill="#d4ff00"
                     animate={{
-                      cx: [0, 45, 80, 100],
-                      cy: [45, 25, 12, 0],
+                      cx: [0, 25, 55, 80, 100],
+                      cy: [45, 38, 22, 13, 5],
                     }}
-                    transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', times: [0, 0.5, 0.7, 1] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' as const, times: [0, 0.25, 0.55, 0.8, 1] }}
                   />
-                  {/* Pulsing glow behind dot */}
+                  
+                  {/* Pulsing glow behind traveling dot */}
                   <motion.circle
                     r="10"
-                    fill="rgba(212,255,0,0.25)"
+                    fill="rgba(212,255,0,0.3)"
                     animate={{
-                      cx: [0, 45, 80, 100],
-                      cy: [45, 25, 12, 0],
+                      cx: [0, 25, 55, 80, 100],
+                      cy: [45, 38, 22, 13, 5],
                     }}
-                    transition={{ duration: 4, repeat: Infinity, ease: 'easeInOut', times: [0, 0.5, 0.7, 1] }}
+                    transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' as const, times: [0, 0.25, 0.55, 0.8, 1] }}
                   />
                 </svg>
+
+                {/* Floating Metric bubble that follows the curve */}
+                <motion.div
+                  className="absolute bg-accent text-black font-extrabold text-[9px] px-1.5 py-0.5 rounded shadow-lg pointer-events-none z-20"
+                  animate={{
+                    left: ["8%", "30%", "58%", "80%", "92%"],
+                    top: ["85%", "73%", "43%", "25%", "8%"],
+                    scale: [0.8, 1.1, 1.1, 1.1, 0.8],
+                    opacity: [0, 1, 1, 1, 0],
+                  }}
+                  transition={{
+                    duration: 5,
+                    repeat: Infinity,
+                    ease: "easeInOut" as const,
+                    times: [0, 0.25, 0.55, 0.8, 1]
+                  }}
+                >
+                  📈 Expand
+                </motion.div>
               </div>
             </div>
 
