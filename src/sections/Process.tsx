@@ -14,7 +14,7 @@ const steps = [
     // Fly off and return animation
     iconAnimation: {
       animate: { x: [0, 14, 0], y: [0, -14, 0], rotate: [0, 15, 0] },
-      transition: { duration: 2.4, repeat: Infinity, ease: 'easeInOut' }
+      transition: { duration: 2.4, repeat: Infinity, ease: 'easeInOut' as const }
     }
   },
   {
@@ -32,7 +32,7 @@ const steps = [
     // Gentle pulse + scale
     iconAnimation: {
       animate: { scale: [1, 1.1, 0.95, 1.08, 1], rotate: [0, 5, -5, 3, 0] },
-      transition: { duration: 2.8, repeat: Infinity, ease: 'easeInOut' }
+      transition: { duration: 2.8, repeat: Infinity, ease: 'easeInOut' as const }
     }
   },
   {
@@ -49,7 +49,7 @@ const steps = [
     // Arrow bounces down
     iconAnimation: {
       animate: { y: [0, 7, 0] },
-      transition: { duration: 1.6, repeat: Infinity, ease: 'easeInOut' }
+      transition: { duration: 1.6, repeat: Infinity, ease: 'easeInOut' as const }
     }
   },
   {
@@ -65,7 +65,7 @@ const steps = [
     // Breathe + rotate
     iconAnimation: {
       animate: { scale: [1, 1.12, 1], rotate: [0, -8, 8, 0] },
-      transition: { duration: 3.2, repeat: Infinity, ease: 'easeInOut' }
+      transition: { duration: 3.2, repeat: Infinity, ease: 'easeInOut' as const }
     }
   }
 ];
