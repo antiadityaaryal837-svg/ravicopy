@@ -1,11 +1,13 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { useNavigate, useLocation, Link } from 'react-router-dom';
 import { cn } from '../../utils/cn';
 
 const navLinks = [
   { name: 'Work', href: '#thumbnails' },
   { name: 'Services', href: '#features' },
   { name: 'Bio', href: '#about' },
+  { name: 'Blogs', href: '/blog' },
 ];
 
 function smoothScrollTo(id: string) {
@@ -18,6 +20,8 @@ function smoothScrollTo(id: string) {
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileOpen, setMobileOpen] = useState(false);
+  const navigate = useNavigate();
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,7 +32,20 @@ export default function Navbar() {
   }, []);
 
   const handleNavClick = (href: string) => {
-    smoothScrollTo(href.replace('#', ''));
+    if (href.startsWith('#')) {
+      const id = href.replace('#', '');
+      if (location.pathname !== '/') {
+        navigate('/');
+        // Wait a tiny bit for navigation to finalize, then scroll
+        setTimeout(() => {
+          smoothScrollTo(id);
+        }, 150);
+      } else {
+        smoothScrollTo(id);
+      }
+    } else {
+      navigate(href);
+    }
     setMobileOpen(false);
   };
 
@@ -45,8 +62,13 @@ export default function Navbar() {
       >
         <div className="max-w-[1400px] mx-auto flex items-center justify-between">
           {/* Left: Avatar Logo Pill */}
-          <a
-            href="#"
+          <Link
+            to="/"
+            onClick={() => {
+              if (location.pathname === '/') {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+              }
+            }}
             className="pointer-events-auto flex-shrink-0 z-50 p-1.5 bg-[#111111]/80 backdrop-blur-md border border-[#222222] rounded-full shadow-lg shadow-black/20 hover:border-[#333] transition-all"
           >
             <div className="w-9 h-9 md:w-12 md:h-12 rounded-full bg-accent overflow-hidden">
@@ -60,7 +82,7 @@ export default function Navbar() {
                 decoding="async"
               />
             </div>
-          </a>
+          </Link>
 
           {/* Center: Nav Links Pill — Desktop Only */}
           <div className="hidden md:flex absolute left-1/2 -translate-x-1/2 items-center bg-[#111111]/80 backdrop-blur-md border border-[#222222] rounded-full px-8 py-3 gap-10 pointer-events-auto shadow-lg shadow-black/20">
@@ -68,7 +90,11 @@ export default function Navbar() {
               <button
                 key={link.name}
                 onClick={() => handleNavClick(link.href)}
-                className="text-[17px] font-medium text-white/70 hover:text-white transition-colors cursor-pointer"
+                className={`text-[17px] font-medium transition-colors cursor-pointer ${
+                  (location.pathname === link.href || (link.href === '/blog' && location.pathname.startsWith('/blog')))
+                    ? 'text-accent'
+                    : 'text-white/70 hover:text-white'
+                }`}
               >
                 {link.name}
               </button>
