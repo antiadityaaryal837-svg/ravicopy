@@ -18,7 +18,7 @@ import FAQ from './sections/FAQ';
 
 function App() {
   const [loading, setLoading] = useState(true);
-  
+
   // Initialize smooth scrolling
   useLenis();
 
