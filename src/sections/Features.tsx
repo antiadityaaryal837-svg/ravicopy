@@ -238,8 +238,11 @@ export default function Features() {
                     </g>
                   ))}
 
-                  {/* Animated group containing the dot and its glow, utilizing translation animations */}
-                  <motion.g
+                  {/* Animated dot that travels along the path */}
+                  <motion.circle
+                    r="4.5"
+                    fill="#d4ff00"
+                    initial={{ cx: 0, cy: 45 }}
                     animate={{
                       x: [0, 25, 55, 80, 100],
                       y: [45, 38, 22, 13, 5],
@@ -317,11 +320,11 @@ export default function Features() {
                 <motion.div whileHover={{ scale: 1.15, rotate: -5 }} className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1c1c1c] border border-[#2e2e2e] p-2.5 flex items-center justify-center overflow-hidden shadow-lg transition-transform cursor-pointer">
                   <img src="/iconsin bleow/X_icon.svg.webp" alt="X Icon" className="w-full h-full object-contain" />
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.15, rotate: 5 }} className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1c1c1c] border border-[#2e2e2e] p-2.5 flex items-center justify-center overflow-hidden shadow-lg transition-transform cursor-pointer">
-                  <img src="/iconsin bleow/Adobe-Photoshop-Logo.png" alt="Photoshop Icon" className="w-full h-full object-contain" />
+                <motion.div whileHover={{ scale: 1.15, rotate: 5 }} className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1c1c1c] border border-[#2e2e2e] p-0 flex items-center justify-center overflow-hidden shadow-lg transition-transform cursor-pointer">
+                  <img src="/iconsin bleow/Adobe-Photoshop-Logo.png" alt="Photoshop Icon" className="w-full h-full object-contain scale-[1.05]" />
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.15, rotate: -5 }} className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1c1c1c] border border-[#2e2e2e] p-2.5 flex items-center justify-center overflow-hidden shadow-lg transition-transform cursor-pointer">
-                  <img src="/iconsin bleow/discord icon.webp" alt="Discord Icon" className="w-full h-full object-contain" />
+                <motion.div whileHover={{ scale: 1.15, rotate: -5 }} className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-[#1c1c1c] border border-[#2e2e2e] p-0 flex items-center justify-center overflow-hidden shadow-lg transition-transform cursor-pointer">
+                  <img src="/iconsin bleow/discord icon.webp" alt="Discord Icon" className="w-full h-full object-contain scale-[1.05]" />
                 </motion.div>
               </div>
             </div>
